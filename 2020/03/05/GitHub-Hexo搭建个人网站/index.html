@@ -311,7 +311,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-03-06 16:57:48'>2020-03-05 19:38</time>
+        创建时间:<time class="date" title='更新时间: 2020-03-10 18:00:34'>2020-03-05 19:38</time>
         
     </div>
     <div class="article-meta">
@@ -351,15 +351,16 @@
       
         <h1 id="1-注册GitHub"><a href="#1-注册GitHub" class="headerlink" title="1.注册GitHub"></a>1.注册GitHub</h1><p>注册GitHub账号：<a href="https://github.com/" target="_blank" rel="noopener">GitHub</a></p>
 <p>新建Repositories：Repo_name格式为【GitHub用户名】.github.io</p>
-<p>比如我的GitHub用户名为wxyard，Repo_ name为：<a href="https://wxyard.github.io/">wxyard.github.io</a></p>
+<p>比如我的GitHub用户名为wxyard，Repo_name为：<a href="https://wxyard.github.io/">wxyard.github.io</a></p>
 <h1 id="2-环境安装"><a href="#2-环境安装" class="headerlink" title="2.环境安装"></a>2.环境安装</h1><p>本地电脑需要安装NodeJS和Git，安装NodeJS，以及下面马上要用到的npm是什么，可以参考：<a href="https://zhuanlan.zhihu.com/p/24357770" target="_blank" rel="noopener">npm 是干什么的？（非教程）</a></p>
 <p>下载安装NodeJS：<a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a></p>
 <p>下载安装Git：<a href="https://gitforwindows.org/" target="_blank" rel="noopener">Git for windows</a></p>
 <h1 id="3-安装配置Hexo"><a href="#3-安装配置Hexo" class="headerlink" title="3.安装配置Hexo"></a>3.安装配置Hexo</h1><p>Hexo是一个博客框架，创建或选择某个文件夹，用于在本地电脑存放和编辑网站文件，在文件夹中鼠标右键打开【Git Bash Here】</p>
-<p><img src="/2020/03/05/GitHub-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/200305_2.png" alt="打开Git Bash"></p>
-<p>输入以下命令安装Hexo和初始化网站环境：</p>
+<p><img src="/2020/03/05/GitHub-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/200305_2.png" alt="打开Git BAsh"></p>
+<p>输入以下命令安装Hexo、初始化环境和安装依赖包：</p>
 <pre><code>npm install -g hexo
-hexo init</code></pre><p>输入以下命令生成和启动Hexo：</p>
+hexo init
+npm install</code></pre><p>输入以下命令生成和启动Hexo：</p>
 <pre><code>hexo g
 hexo s</code></pre><p>g和s分别是generate和server的缩写，这样网站便搭建好了，是不是非常简单？默认访问地址是：<a href="http://localhost:4000/" target="_blank" rel="noopener">localhost:4000/</a></p>
 <p><img src="/2020/03/05/GitHub-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/200305_1.png" alt="Hexo首页"></p>
@@ -390,11 +391,13 @@ hexo g -d </code></pre><p>第一次会提示输入GitHub用户名Username和密�
 <pre><code>git config --global user.name 【GitHub用户名】
 git config --global user.email 【GitHub注册邮箱】</code></pre><p>以上信息windows用户会保存在用户主目录（C:\Users\User_name）的.gitconfig中。</p>
 <p>生成ssh密钥文件：</p>
-<pre><code>ssh-keygen -t rsa -C 【GitHub注册邮箱】</code></pre><p>默认不设置密码，直接回车就行。然后到用户主目录下找到.ssh目录，下面会生成ssh秘钥文件，用文本编辑器打开id_rsa.pub文件，复制全部内容。<br>然后，打开GitHub的<a href="https://github.com/settings/keys" target="_blank" rel="noopener">SSH设置页面</a>,点击【New SSH key】，Title随便，Key粘贴刚刚复制的字符串，【Add SSH key】</p>
+<pre><code>ssh-keygen -t rsa -C 【GitHub注册邮箱】</code></pre><p>默认不设置密码，直接回车就行。然后到用户主目录下找到.ssh目录，下面会生成ssh秘钥文件，用文本编辑器打开id_rsa.pub文件，复制全部内容。</p>
+<p>然后，打开GitHub的<a href="https://github.com/settings/keys" target="_blank" rel="noopener">SSH设置页面</a>,点击【New SSH key】，Title随便，Key粘贴刚刚复制的字符串，【Add SSH key】</p>
 <p>Git Bash界面,输入命令配置密码保存：</p>
 <pre><code>git config --global credential.helper store</code></pre><p>再次发布会提示输入密码，此后密码会被保存在用户主目录的.git-credentials中，下一次发布即可免密码发布了。</p>
 <h1 id="6-发布文章"><a href="#6-发布文章" class="headerlink" title="6.发布文章"></a>6.发布文章</h1><p>在命令行中输入：</p>
-<pre><code>hexo n &quot;github+hexo搭建个人网站&quot;</code></pre><p>n是new的缩写，表示新建一篇文章。<br>此时，source/_posts目录下便会新建一个【github-hexo搭建个人网站.md】文件，md是Markdown格式，通过Markdown我写下了这篇文章，然后重新执行上面的发布流程，新的文章便可以在个人网站看到了。</p>
+<pre><code>hexo n &quot;github+hexo搭建个人网站&quot;</code></pre><p>n是new的缩写，表示新建一篇文章。</p>
+<p>此时，source/_posts目录下便会新建一个【github-hexo搭建个人网站.md】文件，md是Markdown格式，通过Markdown我写下了这篇文章，然后重新执行上面的发布流程，新的文章便可以在个人网站看到了。</p>
 <h1 id="7-更换主题模板"><a href="#7-更换主题模板" class="headerlink" title="7.更换主题模板"></a>7.更换主题模板</h1><p>Hexo模板可以baidu一下，各种排名，选个自己喜欢的即可，我选用的是“3-hexo”，怎么说呢，一见钟情，作者网站及主题使用方式参见：<a href="https://yelog.org/2017/03/07/3-hexo/" target="_blank" rel="noopener">叶落阁</a></p>
 <p>安装：</p>
 <pre><code>git clone https://github.com/yelog/hexo-theme-3-hexo.git themes/3-hexo</code></pre><p>配置：修改hexo根目录的_config.yml的两处，如下</p>
@@ -404,8 +407,7 @@ highlight:
 <p>安装字数统计(由于主题使用这个插件，必须安装，否则会报错)</p>
 <pre><code>npm i --save hexo-wordcount</code></pre><p>更新：</p>
 <pre><code>cd themes/3-hexo
-git pull</code></pre><p>待续……</p>
-
+git pull</code></pre>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
     </div>
@@ -422,7 +424,7 @@ git pull</code></pre><p>待续……</p>
     
     <p><span class="copy-title">本文作者:</span><a  title="John Doe">John Doe</a></p>
     <p><span class="copy-title">发布时间:</span>2020-03-05, 19:38:47</p>
-    <p><span class="copy-title">最后更新:</span>2020-03-06, 16:57:48</p>
+    <p><span class="copy-title">最后更新:</span>2020-03-10, 18:00:34</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/03/05/GitHub-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/" title="GitHub+Hexo搭建个人网站">https://wxyard.github.io/2020/03/05/GitHub-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
