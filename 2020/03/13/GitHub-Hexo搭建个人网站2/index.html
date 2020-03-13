@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>[object Object] | 王家大院</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="[object Object] | 王家大院">
+  <title>GitHub+Hexo搭建个人网站（2）配置及模板修改 | 王家大院</title>
+  <meta name="keywords" content=" GitHub , Hexo , 个人网站 ">
+  <meta name="description" content="GitHub+Hexo搭建个人网站（2）配置及模板修改 | 王家大院">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="[object Object]">
@@ -257,24 +257,42 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <article id="post-GitHub-Hexo搭建个人网站2" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">[object Object]</h1>
+        <h1 class="article-title">GitHub+Hexo搭建个人网站（2）配置及模板修改</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            
+                <a  data-rel="善利门">善利门</a>/
+            
+                <a  data-rel="GitHub+Hexo">GitHub+Hexo</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color2">GitHub</a>
+            
+            <a class="color5">Hexo</a>
+            
+            <a class="color5">个人网站</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-03-05 16:12:12'>2020-03-06 09:55</time>
+        创建时间:<time class="date" title='更新时间: 2020-03-13 19:07:07'>2020-03-13 21:31</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:0</span>
+        <span>字数:591</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -293,7 +311,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#图片目录插件配置"><span class="toc-text">图片目录插件配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#模板问题"><span class="toc-text">模板问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-代码行标"><span class="toc-text">1.代码行标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-排序问题"><span class="toc-text">2.排序问题</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#网站个性化修改"><span class="toc-text">网站个性化修改</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#模板个性化修改"><span class="toc-text">模板个性化修改</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#自动备份及多机编辑"><span class="toc-text">自动备份及多机编辑</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -309,7 +327,35 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="图片目录插件配置"><a href="#图片目录插件配置" class="headerlink" title="图片目录插件配置"></a>图片目录插件配置</h1><p>安装上传本地图片的插件：</p>
+<pre><code>npm install https://github.com/CodeFalling/hexo-asset-image --save</code></pre><p>配置新建文章时生成同名文件夹，修改_config.yml文件，变更如下配置项：</p>
+<pre><code>post_asset_folder: true</code></pre><p>之后使用hexo n新建文章时会自动在source目录下生成文章同名目录，比如</p>
+<pre><code>$ pwd
+/d/Onedrive/wxyard/source/_posts
+$ hexo n hello_world
+INFO  Created: D:\Onedrive\wxyard\source\_posts\hello-world.md
+$ ll
+drwxr-xr-x 1 yard.Wang 197121    0 三月   11 09:14 hello-world/
+-rw-r--r-- 1 yard.Wang 197121   72 三月   11 09:14 hello-world.md</code></pre><p>文章中引用图片时将图片放在对应目录下然后通过以下方式引用：</p>
+<pre><code>![Image_name](GitHub-Hexo搭建个人网站2)</code></pre><h1 id="模板问题"><a href="#模板问题" class="headerlink" title="模板问题"></a>模板问题</h1><h2 id="1-代码行标"><a href="#1-代码行标" class="headerlink" title="1.代码行标"></a>1.代码行标</h2><p>相关模板问题可以在<a href="https://github.com/yelog/hexo-theme-3-hexo/issues" target="_blank" rel="noopener">https://github.com/yelog/hexo-theme-3-hexo/issues</a>找到答案，比如代码块最后一行的行号显示问题，类似这种</p>
+<p><img src="/2020/03/13/GitHub-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%992/%E8%A1%8C%E5%8F%B7%E9%94%99%E8%AF%AF.png" alt="行号显示错误"></p>
+<p><img src="/2020/03/13/GitHub-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%992/%E8%A1%8C%E5%8F%B7%E9%94%99%E8%AF%AF2.png" alt="行号显示错误解决"></p>
+<p>可以在themes\3-hexo\layout_partial\footer.ejs中，把上图“- 1”给删掉就正常了</p>
+<h2 id="2-排序问题"><a href="#2-排序问题" class="headerlink" title="2.排序问题"></a>2.排序问题</h2><p>nav-right.ejs 里改为如下即可实现文章按时间排序。</p>
+<pre><code>&lt;% site.posts.sort(&quot;date&quot;, &quot;desc&quot;).forEach(function(post, i){  %&gt;</code></pre><h1 id="网站个性化修改"><a href="#网站个性化修改" class="headerlink" title="网站个性化修改"></a>网站个性化修改</h1><p>可在hexo根目录，也就是“npm install -g hexo”命令执行的目录，编辑【_config.yml】配置网站基本信息，如果网站名字中有中文，需要把language修改为zh_CN：</p>
+<pre><code># Site
+title: 王家大院
+subtitle: &#39;&#39;
+description: &#39;&#39;
+keywords:
+author: Wxyard
+language: zh_CN
+timezone: &#39;&#39;</code></pre><p>然后保存格式需要选择UTF-8，否则会有乱码，我使用的UE，参考下图：</p>
+<p><img src="/2020/03/13/GitHub-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%992/UTF-8.png" alt="UTF-8格式保存"></p>
+<p>更多修改配置信息可以参考Hexo官方文档：<a href="https://hexo.io/docs/configuration.html" target="_blank" rel="noopener">https://hexo.io/docs/configuration.html</a></p>
+<h1 id="模板个性化修改"><a href="#模板个性化修改" class="headerlink" title="模板个性化修改"></a>模板个性化修改</h1><p>模板配置文件也叫【_config.yml】，在模板目录themes\3-hexo下面，作者给了良好的注释，根据自己需要修改配置即可，比如个人链接、文章分类、文末声明、样式背景图自定义等，更多信息可在作者blog网站：<a href="https://yelog.github.io/" target="_blank" rel="noopener">叶落阁</a>，搜索模板名字3-hexo进行了解。</p>
+<h1 id="自动备份及多机编辑"><a href="#自动备份及多机编辑" class="headerlink" title="自动备份及多机编辑"></a>自动备份及多机编辑</h1><p>网上有很多方案，都不如我的简单易用，Windows下可以直接使用Onedrive软件，把hexo网站目录直接放到Onedrive目录中即可轻松实现。既可以备份blog源文件以防故障丢失，又可以在任意电脑上进行编辑上传。</p>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请保留原文链接及作者，欢迎指出任何有错误或不够清晰的表达。 </span>
     </div>
@@ -318,6 +364,15 @@
 
 <p>
 </p>
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>GitHub+Hexo搭建个人网站（2）配置及模板修改</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">591</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="Wxyard">Wxyard</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-03-13, 21:31:48</p>
+    <p><span class="copy-title">最后更新:</span>2020-03-13, 19:07:07</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/03/13/GitHub-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%992/" title="GitHub+Hexo搭建个人网站（2）配置及模板修改">https://wxyard.github.io/2020/03/13/GitHub-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%992/</a>
+</div>
 
 
 

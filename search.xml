@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>GitHub+Hexo搭建个人网站（2）配置及模板修改</title>
+      <link href="/2020/03/13/GitHub-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%992/"/>
+      <url>/2020/03/13/GitHub-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%992/</url>
+      
+        <content type="html"><![CDATA[<h1 id="图片目录插件配置"><a href="#图片目录插件配置" class="headerlink" title="图片目录插件配置"></a>图片目录插件配置</h1><p>安装上传本地图片的插件：</p><pre><code>npm install https://github.com/CodeFalling/hexo-asset-image --save</code></pre><p>配置新建文章时生成同名文件夹，修改_config.yml文件，变更如下配置项：</p><pre><code>post_asset_folder: true</code></pre><p>之后使用hexo n新建文章时会自动在source目录下生成文章同名目录，比如</p><pre><code>$ pwd/d/Onedrive/wxyard/source/_posts$ hexo n hello_worldINFO  Created: D:\Onedrive\wxyard\source\_posts\hello-world.md$ lldrwxr-xr-x 1 yard.Wang 197121    0 三月   11 09:14 hello-world/-rw-r--r-- 1 yard.Wang 197121   72 三月   11 09:14 hello-world.md</code></pre><p>文章中引用图片时将图片放在对应目录下然后通过以下方式引用：</p><pre><code>![Image_name](GitHub-Hexo搭建个人网站2)</code></pre><h1 id="模板问题"><a href="#模板问题" class="headerlink" title="模板问题"></a>模板问题</h1><h2 id="1-代码行标"><a href="#1-代码行标" class="headerlink" title="1.代码行标"></a>1.代码行标</h2><p>相关模板问题可以在<a href="https://github.com/yelog/hexo-theme-3-hexo/issues" target="_blank" rel="noopener">https://github.com/yelog/hexo-theme-3-hexo/issues</a>找到答案，比如代码块最后一行的行号显示问题，类似这种</p><p><img src="/2020/03/13/GitHub-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%992/%E8%A1%8C%E5%8F%B7%E9%94%99%E8%AF%AF.png" alt="行号显示错误"></p><p><img src="/2020/03/13/GitHub-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%992/%E8%A1%8C%E5%8F%B7%E9%94%99%E8%AF%AF2.png" alt="行号显示错误解决"></p><p>可以在themes\3-hexo\layout_partial\footer.ejs中，把上图“- 1”给删掉就正常了</p><h2 id="2-排序问题"><a href="#2-排序问题" class="headerlink" title="2.排序问题"></a>2.排序问题</h2><p>nav-right.ejs 里改为如下即可实现文章按时间排序。</p><pre><code>&lt;% site.posts.sort(&quot;date&quot;, &quot;desc&quot;).forEach(function(post, i){  %&gt;</code></pre><h1 id="网站个性化修改"><a href="#网站个性化修改" class="headerlink" title="网站个性化修改"></a>网站个性化修改</h1><p>可在hexo根目录，也就是“npm install -g hexo”命令执行的目录，编辑【_config.yml】配置网站基本信息，如果网站名字中有中文，需要把language修改为zh_CN：</p><pre><code># Sitetitle: 王家大院subtitle: &#39;&#39;description: &#39;&#39;keywords:author: Wxyardlanguage: zh_CNtimezone: &#39;&#39;</code></pre><p>然后保存格式需要选择UTF-8，否则会有乱码，我使用的UE，参考下图：</p><p><img src="/2020/03/13/GitHub-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%992/UTF-8.png" alt="UTF-8格式保存"></p><p>更多修改配置信息可以参考Hexo官方文档：<a href="https://hexo.io/docs/configuration.html" target="_blank" rel="noopener">https://hexo.io/docs/configuration.html</a></p><h1 id="模板个性化修改"><a href="#模板个性化修改" class="headerlink" title="模板个性化修改"></a>模板个性化修改</h1><p>模板配置文件也叫【_config.yml】，在模板目录themes\3-hexo下面，作者给了良好的注释，根据自己需要修改配置即可，比如个人链接、文章分类、文末声明、样式背景图自定义等，更多信息可在作者blog网站：<a href="https://yelog.github.io/" target="_blank" rel="noopener">叶落阁</a>，搜索模板名字3-hexo进行了解。</p><h1 id="自动备份及多机编辑"><a href="#自动备份及多机编辑" class="headerlink" title="自动备份及多机编辑"></a>自动备份及多机编辑</h1><p>网上有很多方案，都不如我的简单易用，Windows下可以直接使用Onedrive软件，把hexo网站目录直接放到Onedrive目录中即可轻松实现。既可以备份blog源文件以防故障丢失，又可以在任意电脑上进行编辑上传。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 善利门 </category>
+          
+          <category> GitHub+Hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> GitHub </tag>
+            
+            <tag> Hexo </tag>
+            
+            <tag> 个人网站 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>GitHub+Hexo搭建个人网站</title>
+      <link href="/2020/03/12/GitHub-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/"/>
+      <url>/2020/03/12/GitHub-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/</url>
+      
+        <content type="html"><![CDATA[<h1 id="1-注册GitHub"><a href="#1-注册GitHub" class="headerlink" title="1.注册GitHub"></a>1.注册GitHub</h1><p>注册GitHub账号：<a href="https://github.com/" target="_blank" rel="noopener">GitHub</a></p><p>新建Repositories：Repo_name格式为【GitHub用户名】.github.io</p><p>比如我的GitHub用户名为wxyard，Repo_name为：<a href="https://wxyard.github.io/">wxyard.github.io</a></p><h1 id="2-环境安装"><a href="#2-环境安装" class="headerlink" title="2.环境安装"></a>2.环境安装</h1><p>本地电脑需要安装NodeJS和Git，安装NodeJS，以及下面马上要用到的npm是什么，可以参考：<a href="https://zhuanlan.zhihu.com/p/24357770" target="_blank" rel="noopener">npm 是干什么的？（非教程）</a></p><p>下载安装NodeJS：<a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a></p><p>下载安装Git：<a href="https://gitforwindows.org/" target="_blank" rel="noopener">Git for windows</a></p><h1 id="3-安装配置Hexo"><a href="#3-安装配置Hexo" class="headerlink" title="3.安装配置Hexo"></a>3.安装配置Hexo</h1><p>Hexo是一个博客框架，创建或选择某个文件夹，用于在本地电脑存放和编辑网站文件，在文件夹中鼠标右键打开【Git Bash Here】</p><p><img src="/2020/03/12/GitHub-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/200305_2.png" alt="打开Git BAsh"></p><p>输入以下命令安装Hexo、初始化环境和安装依赖包：</p><pre><code>npm install -g hexohexo initnpm install</code></pre><p>输入以下命令生成和启动Hexo：</p><pre><code>hexo ghexo s</code></pre><p>g和s分别是generate和server的缩写，这样网站便搭建好了，是不是非常简单？默认访问地址是：<a href="http://localhost:4000/" target="_blank" rel="noopener">localhost:4000/</a></p><p><img src="/2020/03/12/GitHub-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/200305_1.png" alt="Hexo首页"></p><pre><code>$ hexo sINFO  Start processingINFO  Hexo is running at http://localhost:4000 . PressCtrl+C to stop.</code></pre><p>【Ctrl+C】停止服务</p><h1 id="4-部署到GitHub"><a href="#4-部署到GitHub" class="headerlink" title="4.部署到GitHub"></a>4.部署到GitHub</h1><p>返回文件夹中查看文件：</p><p><img src="/2020/03/12/GitHub-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/200305_3.png" alt="网站目录结构"></p><p>我们开始需要重点关注的有以下几个：</p><ul><li>_config.yml：网站的全局配置文件</li><li>source：资源文件夹，用来存放图片、Markdown文档（文章、草稿）、各种页面（分类、关于页面等）</li><li>themes：主题文件夹，下面是具体的模板主题，默认是landscape，复制的第三方模板存在这下面</li></ul><p>使用文本编辑器打开_config.yml，【Crtl+F】查找“url”，修改为：</p><pre><code>url: https://【GitHub用户名】.github.io</code></pre><p>【Crtl+F】查找“deploy”，修改为：</p><pre><code>deploy:  type: git  repo: https://github.com/【GitHub用户名】/【GitHub用户名】.github.io.git  branch: master</code></pre><p>repo链接也可以在GitHub网站的repository页面获取。</p><p><img src="/2020/03/12/GitHub-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/200305_4.png" alt="复制Repository"></p><p>保存退出，Git Bash界面继续输入以下命令：</p><p>安装部署插件：</p><pre><code>npm install hexo-deployer-git  --save</code></pre><p>发布到GitHub</p><pre><code>hexo cleanhexo g -d </code></pre><p>第一次会提示输入GitHub用户名Username和密码Password，输入等待发布完成，打开浏览器，访问网站地址：<a href="https://wxyard.github.io/">https://【GitHub用户名】.github.io/</a>，嗯，熟悉的Hexo页面，大功告成！！</p><h1 id="5-配置SSH及免密登陆"><a href="#5-配置SSH及免密登陆" class="headerlink" title="5.配置SSH及免密登陆"></a>5.配置SSH及免密登陆</h1><p>Git Bash界面,输入命令配置用户名和邮箱信息：</p><pre><code>git config --global user.name 【GitHub用户名】git config --global user.email 【GitHub注册邮箱】</code></pre><p>以上信息windows用户会保存在用户主目录（C:\Users\User_name）的.gitconfig中。</p><p>生成ssh密钥文件：</p><pre><code>ssh-keygen -t rsa -C 【GitHub注册邮箱】</code></pre><p>默认不设置密码，直接回车就行。然后到用户主目录下找到.ssh目录，下面会生成ssh秘钥文件，用文本编辑器打开id_rsa.pub文件，复制全部内容。</p><p>然后，打开GitHub的<a href="https://github.com/settings/keys" target="_blank" rel="noopener">SSH设置页面</a>,点击【New SSH key】，Title随便，Key粘贴刚刚复制的字符串，【Add SSH key】</p><p>Git Bash界面,输入命令配置密码保存：</p><pre><code>git config --global credential.helper store</code></pre><p>再次发布会提示输入密码，此后密码会被保存在用户主目录的.git-credentials中，下一次发布即可免密码发布了。</p><h1 id="6-发布文章"><a href="#6-发布文章" class="headerlink" title="6.发布文章"></a>6.发布文章</h1><p>在命令行中输入：</p><pre><code>hexo n &quot;github+hexo搭建个人网站&quot;</code></pre><p>n是new的缩写，表示新建一篇文章。</p><p>此时，source/_posts目录下便会新建一个【github-hexo搭建个人网站.md】文件，md是Markdown格式，通过Markdown我写下了这篇文章，然后重新执行上面的发布流程，新的文章便可以在个人网站看到了。</p><h1 id="7-更换主题模板"><a href="#7-更换主题模板" class="headerlink" title="7.更换主题模板"></a>7.更换主题模板</h1><p>Hexo模板可以baidu一下，各种排名，选个自己喜欢的即可，我选用的是“3-hexo”，怎么说呢，一见钟情，作者网站及主题使用方式参见：<a href="https://yelog.org/2017/03/07/3-hexo/" target="_blank" rel="noopener">叶落阁</a></p><p>安装：</p><pre><code>git clone https://github.com/yelog/hexo-theme-3-hexo.git themes/3-hexo</code></pre><p>配置：修改hexo根目录的_config.yml的两处，如下</p><pre><code>theme: 3-hexohighlight:  enable: false #关闭hexo渲染高亮，使用主题代码块高亮</code></pre><p>在hexo根目录source下添加avatar.jpg文件，作为头像</p><p>安装字数统计(由于主题使用这个插件，必须安装，否则会报错)</p><pre><code>npm i --save hexo-wordcount</code></pre><p>更新：</p><pre><code>cd themes/3-hexogit pull</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 善利门 </category>
+          
+          <category> GitHub+Hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> GitHub </tag>
+            
+            <tag> Hexo </tag>
+            
+            <tag> 个人网站 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
